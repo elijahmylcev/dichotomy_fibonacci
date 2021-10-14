@@ -1,0 +1,28 @@
+{
+  "name": "dichotomy_fibonacci",
+  "version": "1.0.0",
+  "description": "The function collects a Fibonacci sequence with the specified number of elements. Binary search returns the element and its index in the sequence.",
+  "main": "dichotomy.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elijahmylcev/dichotomy_fibonacci.git"
+  },
+  "keywords": [
+    "js",
+    "fibonacci",
+    "binary",
+    "search"
+  ],
+  "author": "Elijah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elijahmylcev/dichotomy_fibonacci/issues"
+  },
+  "homepage": "https://github.com/elijahmylcev/dichotomy_fibonacci#readme",
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}
