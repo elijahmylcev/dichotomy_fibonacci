@@ -3,14 +3,14 @@ const Fibonacci = require('./dichotomy');
 describe('Fibonacci sequence', () => {
   let fib
   beforeEach(() => {
-    fib = new Fibonacci(10)
+    fib = new Fibonacci()
   });
   test('getFib() method must return an array', () => {
     expect(Array.isArray(fib.getFib(5))).toBeTruthy();
   });
   test('Each subsequent number in the sequence[array] is equal to the sum of the previous two numbers', () => {
     const expected = [0, 1, 1, 2, 3, 5, 8]
-    expect(fib).toEqual(expect.arrayContaining(expected));
+    expect(fib.getFib(10)).toEqual(expect.arrayContaining(expected));
   });
 });
 
