@@ -15,10 +15,12 @@ describe('Fibonacci sequence', () => {
 });
 
 describe('getElementIndexNative()', () => {
-  test('Returns the index of the specified element in a sequence | null', () => {
+  test('Returns the element in a sequence at the specified index', () => {
     const fibTest = new Fibonacci(9)
-    expect(fibTest.getElement(2)).toEqual(3);
-    expect(fibTest.getElement(13)).toEqual(7);
-    expect(fibTest.getElement(6)).toBeNull();
+    console.log(fibTest);
+    expect(fibTest.getElement(1)).toEqual(1);
+    expect(fibTest.getElement(2)).toEqual(1);
+    expect(fibTest.getElement(4)).toEqual(3);
+    expect(fibTest.getElement(6)).toEqual(8);
   })
 });
