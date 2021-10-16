@@ -5,16 +5,16 @@ describe('Fibonacci sequence', () => {
   beforeEach(() => {
     fib = new Fibonacci(10)
   });
-  test('Fibonacci return an array', () => {
-    expect(Array.isArray(fib)).toBeTruthy();
+  test('getSequence method return an array', () => {
+    expect(Array.isArray(fib.getSequence())).toBeTruthy();
   });
   test('Each subsequent number in the sequence[array] is equal to the sum of the previous two numbers', () => {
     const expected = [0, 1, 1, 2, 3, 5, 8]
-    expect(fib).toEqual(expect.arrayContaining(expected));
+    expect(fib.getSequence()).toEqual(expect.arrayContaining(expected));
   });
 });
 
-describe('getElement()', () => {
+describe('getElementIndexNative()', () => {
   test('Returns the index of the specified element in a sequence | null', () => {
     const fibTest = new Fibonacci(9)
     expect(fibTest.getElement(2)).toEqual(3);

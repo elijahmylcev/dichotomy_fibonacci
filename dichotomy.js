@@ -1,15 +1,18 @@
 class Fibonacci {
   constructor(index) {
     this.index = index
-    const fib = [0,1]
+    this.fib = [0,1]
     for (let i = 0; i < this.index; i++) {
-      fib.push(fib[i] + fib[i+1])
+      this.fib.push(this.fib[i] + this.fib[i+1])
     }
-    return fib
   }
 
-  getElement(index) {
-
+  getSequence() {
+    return this.fib
+  }
+  
+  getElement() {
+    
   }
 }
 
