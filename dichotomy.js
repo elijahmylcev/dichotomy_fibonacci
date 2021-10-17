@@ -22,6 +22,28 @@ class Fibonacci {
       }
     }
   }
+
+  getElementIndexDichotomy(number) {
+    if (!number) {
+      console.error('Введите порядковый номер элемента последовательности...');
+    }
+
+    let start = 0
+    let end = this.fib.length - 1
+
+    while (end - start > 1) {
+      const middle = Math.floor((start + end)/2)
+
+      if (middle === number) {
+        return this.fib[middle]
+      }
+      if (middle > number) {
+        end = middle
+      } else {
+        start = middle
+      }
+    }
+  }
 }
 
 module.exports = Fibonacci
