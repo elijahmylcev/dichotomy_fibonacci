@@ -1,23 +1,18 @@
 const Fibonacci = require('./dichotomy');
+const fibTest = new Fibonacci(9)
+jest.spyOn(console, 'log');
 
 describe('Fibonacci sequence', () => {
-  let fib
-  beforeEach(() => {
-    fib = new Fibonacci(10)
-  });
   test('getSequence method return an array', () => {
-    expect(Array.isArray(fib.getSequence())).toBeTruthy();
+    expect(Array.isArray(fibTest.getSequence())).toBeTruthy();
   });
   test('Each subsequent number in the sequence[array] is equal to the sum of the previous two numbers', () => {
     const expected = [0, 1, 1, 2, 3, 5, 8]
-    expect(fib.getSequence()).toEqual(expect.arrayContaining(expected));
+    expect(fibTest.getSequence()).toEqual(expect.arrayContaining(expected));
   });
 });
 
 describe('getElementIndexNative(number)', () => {
-  const fibTest = new Fibonacci(9)
-  jest.spyOn(console, 'log');
-
   test('should return message: !number', () => {
     expect(console.log.mock.calls.length).toBe(0);
     fibTest.getElementIndexNative();
