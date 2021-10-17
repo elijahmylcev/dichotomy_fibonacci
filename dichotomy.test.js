@@ -1,6 +1,5 @@
 const Fibonacci = require('./dichotomy');
 const fibTest = new Fibonacci(9)
-jest.spyOn(console, 'log');
 
 describe('Fibonacci sequence', () => {
   test('getSequence method return an array', () => {
@@ -14,6 +13,8 @@ describe('Fibonacci sequence', () => {
 
 describe('getElementIndexNative(number)', () => {
   test('should return message: !number', () => {
+    jest.spyOn(console, 'log');
+
     expect(console.log.mock.calls.length).toBe(0);
     fibTest.getElementIndexNative();
     expect(console.log.mock.calls.length).toBe(1);
@@ -25,4 +26,30 @@ describe('getElementIndexNative(number)', () => {
     expect(fibTest.getElementIndexNative(4)).toEqual(3);
     expect(fibTest.getElementIndexNative(6)).toEqual(8);
   })
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+});
+
+describe('getElementIndexDichotomy(number) method', () => {
+  test('Should return error if !number', () => {
+    jest.spyOn(console, 'error')
+
+    expect(console.error.mock.calls.length).toBe(0);
+    fibTest.getElementIndexDichotomy();
+    expect(console.error.mock.calls.length).toBe(1);
+    expect(console.error.mock.calls[0][0]).toBe('Введите порядковый номер элемента последовательности...');
+  });
+
+  test('Should return element at the specified index ', () => {
+    expect(fibTest.getElementIndexDichotomy(1)).toEqual(1);
+    expect(fibTest.getElementIndexDichotomy(2)).toEqual(1);
+    expect(fibTest.getElementIndexDichotomy(4)).toEqual(3);
+    expect(fibTest.getElementIndexDichotomy(6)).toEqual(8);
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 });
