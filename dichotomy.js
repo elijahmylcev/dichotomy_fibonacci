@@ -12,21 +12,11 @@ class Fibonacci {
   }
   
   // На данный момент метод getElement возвращает ИНДЕКС ЭЛЕМЕНТА МАССИВА
-  getElement(number) {
+  getElementIndexNative(number) {
     if (!number) {
       console.log('Введите порядковый номер элемента последовательности...');
     }
-    switch (number) {
-      case 0:
-        return 0
-      case 1:
-        return 1
-      case 2:
-        return 1
-      default:
-        break;
-    }
-    for (let i = 3; i < this.fib.length; i++) {
+    for (let i = 0; i < this.fib.length; i++) {
       if (i === number) {
         return this.fib[i]
       }

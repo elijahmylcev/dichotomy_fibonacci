@@ -14,13 +14,20 @@ describe('Fibonacci sequence', () => {
   });
 });
 
-describe('getElementIndexNative()', () => {
+describe('getElementIndexNative(number)', () => {
+  const fibTest = new Fibonacci(9)
+  jest.spyOn(console, 'log');
+
+  test('should return message: !number', () => {
+    expect(console.log.mock.calls.length).toBe(0);
+    fibTest.getElementIndexNative();
+    expect(console.log.mock.calls.length).toBe(1);
+    expect(console.log.mock.calls[0][0]).toBe('Введите порядковый номер элемента последовательности...');
+  });
   test('Returns the element in a sequence at the specified index', () => {
-    const fibTest = new Fibonacci(9)
-    console.log(fibTest);
-    expect(fibTest.getElement(1)).toEqual(1);
-    expect(fibTest.getElement(2)).toEqual(1);
-    expect(fibTest.getElement(4)).toEqual(3);
-    expect(fibTest.getElement(6)).toEqual(8);
+    expect(fibTest.getElementIndexNative(1)).toEqual(1);
+    expect(fibTest.getElementIndexNative(2)).toEqual(1);
+    expect(fibTest.getElementIndexNative(4)).toEqual(3);
+    expect(fibTest.getElementIndexNative(6)).toEqual(8);
   })
 });
